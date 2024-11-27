@@ -36,7 +36,7 @@ app.post('/signedrequest', function(req, res) {
         qr.addData(text);
         qr.make();
         var imgTag = qr.createImgTag(4);
-        res.render('index', {context: context, imgTag: imgTag});
+        res.render('index', {context: context, imgTag: imgTag, contact: contact});
     });
 
 });
