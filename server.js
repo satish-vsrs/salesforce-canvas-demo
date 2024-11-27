@@ -11,7 +11,7 @@ var express = require('express'),
 app.set('view engine', 'ejs');
 app.use(bodyParser()); // pull information from html in POST
 app.use(express.static(__dirname + '/public'));
-
+ 
 app.post('/signedrequest', function(req, res) {
 
     // You could save this information in the user session if needed
@@ -39,6 +39,10 @@ app.post('/signedrequest', function(req, res) {
         res.render('index', {context: context, imgTag: imgTag});
     });
 
+});
+
+app.get('/contact', function (req, res) {
+    res.render('contact'); // Render contact.ejs
 });
 
 app.set('port', process.env.PORT || 5000);
