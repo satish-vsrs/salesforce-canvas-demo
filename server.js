@@ -36,14 +36,12 @@ app.post('/signedrequest', function(req, res) {
         qr.addData(text);
         qr.make();
         var imgTag = qr.createImgTag(4);
-        res.render('index', {context: context, imgTag: imgTag, contact: contact});
+        res.render('index', {context: context, imgTag: imgTag});
     });
 
 });
 
-app.get('/contact', function (req, res) {
-    res.render('contact'); // Render contact.ejs
-});
+
 
 app.set('port', process.env.PORT || 5000);
 
